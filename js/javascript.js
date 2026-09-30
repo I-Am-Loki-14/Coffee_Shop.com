@@ -17,8 +17,11 @@ function closeMenu() {
 // https://script.google.com/macros/s/AKfycbyWcZjxaYWvh0UTjViemIVjGb6DKYnDScbChqV10E6A9MPmbyqZNIG7JEkdT87BO3e2/exec
 const CardContainer = document.getElementById("card-container");
 console.log(CardContainer);
-
-CardContainer.innerHTML =" ";
+const LoadingMessage = document.getElementById('loading-message');
+console.log(LoadingMessage);
+roww = `<h1 style="font-family:   Orbitron, sans-serif;text-align: center;color:#452829;" id="loading-message">loading...
+    </h1>`
+CardContainer.innerHTML += roww;
 async function coffee() {
     try {
         console.log("Fetching data...");
@@ -27,6 +30,7 @@ async function coffee() {
         const data = await URL.json();
         console.log(data);
         console.log("Complete data.");
+        CardContainer.innerHTML ="";
         data.forEach(cafe => {
             console.log(cafe);
             row = `
