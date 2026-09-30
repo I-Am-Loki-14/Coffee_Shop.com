@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&family=Orbitron:wght@400..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #452829;
+  --secondary-color: #57595b;
+  --para-color: #e8d1c5;
+  --h-color: #452829;
+  --white-color: #ffffff;
+  --black-color: #222222;
+  --border-color: #57595bde;
+  --h-font: "Orbitron", sans-serif;
+  --p-font: "Chewy", system-ui;
+  --bg-color: #faf7f3;
+  --font-weight: 500;
+}
+/* html,
+body {
+  overflow-x: hidden;
+} */
+.container {
+  /* background-color: var(--bg-color); */
+  padding: 0;
+}
+.title {
+  text-align: center;
+  font-family: var(--h-font);
+  color: var(--h-color);
+  padding: 0.5rem 0;
+}
+nav img {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+}
+.header-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  height: auto;
+  background-color: var(--bg-color);
+  position: relative;
+  z-index: 1000;
+}
+nav .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+nav .nav-links li a {
+  margin: 0 0.5rem;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-family: var(--h-font);
+  font-weight: var(--font-weight);
+}
+.nav-links.show {
+  transform: translateX(0);
+}
+/* menu bar  */
+.menu-bar {
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .menu-bar {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    padding: 1rem 0.2rem !important;
+    transform: translateX(-150%);
+    transition: all 0.3s ease-in-out;
+  }
+  .nav-links li {
+    width: 100%;
+    margin: 0.2rem 0;
+  }
+  .nav-links li a {
+    display: block;
+  }
+  .home {
+    min-height: 50vh !important;
+  }
+}
+/* home section  */
+.home {
+  width: 100%;
+  min-height: 80vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/coffee-home-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.about {
+  width: 100%;
+  min-height: 80vh;
+  /* background-color: var(--border-color); */
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+.cards-container .card {
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: var(--bg-color);
+}
+.cards-container .card h4,
+span {
+  font-family: var(--h-font);
+  color: var(--h-color);
+}
+.cards-container .card img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+.cards-container .card:hover img {
+  transform: scale(1.2);
+}
