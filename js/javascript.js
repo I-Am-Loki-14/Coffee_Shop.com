@@ -14,7 +14,7 @@ Menubar.addEventListener("click",()=>{
 function closeMenu() {
     Navlinks.classList.remove('show')
 }
-// https://script.google.com/macros/s/AKfycbyWcZjxaYWvh0UTjViemIVjGb6DKYnDScbChqV10E6A9MPmbyqZNIG7JEkdT87BO3e2/exec
+
 const CardContainer = document.getElementById("card-container");
 console.log(CardContainer);
 const LoadingMessage = document.getElementById('loading-message');
@@ -48,3 +48,19 @@ async function coffee() {
     }
 }
 coffee();
+
+const SliderContainer = document.querySelectorAll('.slider-cards .slider-card');
+console.log(SliderContainer);
+let index = 0;
+
+function next() {
+    index = (index + 1) % SliderContainer.length
+    SliderContainer.forEach(slider => slider.classList.remove('active'));
+    SliderContainer[index].classList.add('active');
+}
+function prev() {
+    index = (index - 1 + SliderContainer.length) % SliderContainer.length
+    SliderContainer.forEach(slider => slider.classList.remove('active'));
+    SliderContainer[index].classList.add('active')
+}
+setInterval(next,3000)
